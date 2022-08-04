@@ -23,10 +23,21 @@ const Forecast = () => {
         }
     };
     
-    fetch('https://weatherapi-com.p.rapidapi.com/ip.json?q=auto%3Aip', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+    fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=auto%3Aip&days=3&lang=condition%3Atext', options)
+    .then(response => response.json())
+    .then(response => {
+        if (response.cod !== 200) {
+            throw new Error()
+        }
+        setResponseObj(response);
+        setLoading(false);
+    })
+    .catch(err => {
+        setError(true);
+        setLoading(false);
+        console.log(err.message);
+    });
+}
    return (
     <div>
     <h2>Find Current Weather Conditions</h2>
