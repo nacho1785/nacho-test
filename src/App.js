@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Clock from './clock';
 import React, { Component } from 'react';
-import Forecast from "./components/forecast/Forecast";
+import Forecast from "./components/Forecast/Forecast";
 
 class App extends Component {
   render() {
