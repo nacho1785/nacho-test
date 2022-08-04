@@ -18,7 +18,7 @@ const Forecast = () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '644b67287emshc62c3b6f2e0c2e1p1a8861jsna45eab90fdca',
+            'X-RapidAPI-Key': '8fa4dd67a7dcb6a9153a267d5febe1b5',
             'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com'
         }
     };
