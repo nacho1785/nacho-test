@@ -18,26 +18,15 @@ const Forecast = () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '8fa4dd67a7dcb6a9153a267d5febe1b5',
-            'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com'
+            'X-RapidAPI-Key': '644b67287emshc62c3b6f2e0c2e1p1a8861jsna45eab90fdca',
+            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
     
-    fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, options)
-        .then(response => response.json())
-        .then(response => {
-            if (response.cod !== 200) {
-                throw new Error()
-            }
-            setResponseObj(response);
-            setLoading(false);
-        })
-        .catch(err => {
-            setError(true);
-            setLoading(false);
-            console.log(err.message);
-        });
-   }
+    fetch('https://weatherapi-com.p.rapidapi.com/ip.json?q=auto%3Aip', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
    return (
     <div>
     <h2>Find Current Weather Conditions</h2>
